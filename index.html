@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selección Argentina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="titulo">La Selección Argentina</h1>
+
+    <p id="texto">
+        La Selección Argentina es algo que se siente, más que se explica. Es esa mezcla de orgullo, nervios, alegría y sufrimiento que te atraviesa cada vez que juegan. 
+        Es ver a todo un país parar por 90 minutos, gritar un gol como si fuera propio y abrazarse con gente que ni conocés. 
+        Tiene que ver con la historia, con Maradona haciendo magia, con Messi cumpliendo su sueño y el de todos. 
+        Pero también con esos partidos que dolieron, que nos hicieron llorar, putear, volver a ilusionarnos. 
+        Es una parte de nosotros. Cuando juega la Selección, no importa dónde estés: te conecta con algo muy profundo. 
+        Porque en el fondo, todos llevamos un pedacito de celeste y blanco en el corazón.
+    </p>
+    <button id="botonResumir" onclick="resumir()">Resumir</button> 
+     <img src="afaa.jpg" alt="">
+    <script>
+        let parrafo = document.getElementById("texto");
+       
+        let textoResumido = "La Selección Argentina se siente más que se explica. Es emoción, orgullo y pasión que une al país cada vez que juega. Nos conecta con la historia, con ídolos como Maradona y Messi, y con momentos que nos hicieron reír, llorar e ilusionarnos. Llevar la celeste y blanca es llevar un pedacito del alma argentina.";
+     function resumir() {
+            parrafo.textContent = textoResumido;
+       botonResumir.style.display = "none";
+        }
+        
+    </script>
+</body>
+</html>
