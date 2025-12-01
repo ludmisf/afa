@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Seleccion Argentina</title>
+    <link rel="stylesheet" href="style.css" >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Inicio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="pagina1.html">Página 1</a></li>
+            <li class="nav-item"><a class="nav-link" href="pagina2.html">Página 2</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="layout">
+        <main class="card" role="main">
+        <h1>Argentina</h1>
+        <p>Elige un boton</p>
+        <div class="buttons" role="group" aria-label="Grupo de botones">
+          <button id="btn1" type="button">Argentina la mejor</button>
+          <button id="btn2" type="button">Messi jugadorazo</button>
+          <button id="btn3" type="button">Aguante la scaloneta</button>
+          <button id="btn4" type="button">Aguante Boca</button>
+          <button id="btn5" type="button">Argentina el mejor pais</button>
+        </div>
+        <div id="output" class="output" aria-live = "polite">ARGENTINA FOREVER</div>
+      </main>
+
+      <aside class="aside" aria-label="Columna lateral">
+        <section class="columns" aria-label="Tres filas de texto">
+          <div class="col">
+            <p>ARGENTINA</p>
+          </div>
+          <div class="col">
+            <p>MESSI DIOS</p>
+          </div>
+          <div class="col">
+            <p>BOCA JUNIORS</p>
+          </div>
+        </section>
+      </aside>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const output = document.getElementById('output');
+      const body = document.body;
+
+      const colores = {
+        btn1: '#87CEEB', 
+        btn2: '#ffffff', 
+        btn3: '#ffea00', 
+        btn4: '#0000ff', 
+        btn5: '#f5f5dc'  
+      };
+      
+      
+      body.style.transition = 'background 300ms ease';
+
+      document.querySelectorAll('.buttons button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.id;
+          const color = colores[id] || '#ffffff';
+          body.style.background = color;
+          output.textContent = 'Has pulsado: ' + btn.textContent;
+        });
+      });
+    </script>
+  </body>
+</html>
