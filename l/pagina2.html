@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Botones</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="btnReinicio">Reiniciar</button>
+
+
+    <div class="seccion-imagen">
+        <img src=".img/670386-47673-seleccion-2520argentina-0.jpg" class="imagen-toggle" id="imagenToggle">
+        <div id="textoOculto">Este texto se puede ocultar/mostrar</div>
+    </div>
+
+   
+    <div class="menu">
+        <button id="btn1">Botón 1</button>
+        <button id="btn2">Botón 2</button>
+        <button id="btn3">Botón 3</button>
+    </div>
+    <div id="texto"></div>
+
+    <script>
+       
+        (function() {
+            const imagenToggle = document.getElementById('imagenToggle');
+            const textoOculto = document.getElementById('textoOculto');
+
+            imagenToggle.addEventListener('click', () => {
+                textoOculto.style.display = textoOculto.style.display === 'none' ? 'block' : 'none';
+            });
+
+            textoOculto.addEventListener('click', () => {
+                imagenToggle.style.display = 'none';
+            });
+        })();
+
+        
+        (function() {
+            const texto = document.getElementById('texto');
+            const textoOculto = document.getElementById('textoOculto');
+            const imagenToggle = document.getElementById('imagenToggle');
+            
+            document.getElementById('btn1').addEventListener('click', () => {
+                texto.textContent = '¡Has presionado el Botón 1!';
+            });
+
+            document.getElementById('btn2').addEventListener('click', () => {
+                texto.textContent = '¡Has presionado el Botón 2!';
+            });
+
+            document.getElementById('btn3').addEventListener('click', () => {
+                texto.textContent = '¡Has presionado el Botón 3!';
+            });
+
+            document.getElementById('btnReinicio').addEventListener('click', () => {
+                texto.textContent = '';
+                textoOculto.style.display = 'block';
+                imagenToggle.style.display = 'block';
+            });
+        })();
+    </script>
+</body>
+</html>
